@@ -24,12 +24,21 @@ public class StringCalculatorKataTest {
         assertEquals(3, StringCalculatorKata.add("1,2"));
     }
 
+    //TODO: impl solution to handle this test
+    @Test
+    void test_add_numbers_start_with_comma(){
+        assertEquals(3, StringCalculatorKata.add(",1,2"));
+    }
+
+    @Test
+    void test_add_numbers_end_with_comma(){
+        assertEquals(3, StringCalculatorKata.add("1,2,"));
+    }
+
     @Test
     void test_add_numbers_with_unknown_amount_of_numbers(){
-        //generate random length
         int length = (int) (Math.random() * (10 - 1 + 1) + 1);
 
-        //generate string of number with random length
         String randoNumbers = generate(() -> "1,")
                 .limit(length)
                 .collect(Collectors.joining());
