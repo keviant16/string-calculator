@@ -7,11 +7,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StringCalculatorKataTest {
 
     @Test
-    void test_add_step_one(){
+    void test_add_empty_string(){
         assertEquals(0, StringCalculatorKata.add(""));
-        assertEquals(1, StringCalculatorKata.add("1"));
-        assertEquals(3, StringCalculatorKata.add("1,2"));
     }
 
+    @Test
+    void test_add_number(){
+        assertEquals(1, StringCalculatorKata.add("1"));
+    }
 
+    @Test
+    void test_add_numbers_with_comma(){
+        assertEquals(3, StringCalculatorKata.add("1,2"));
+    }
 }
