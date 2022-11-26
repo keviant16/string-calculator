@@ -46,4 +46,13 @@ public class StringCalculatorKataTest {
         assertEquals(length, StringCalculatorKata.add(randoNumbers));
     }
 
+    @Test
+    void test_add_numbers_with_new_lines_between_numbers(){
+        assertEquals(6, StringCalculatorKata.add("1\n2,3"));
+    }
+
+    @Test
+    void test_add_handle_new_lines_between_numbers_is_not_ok(){
+        assertEquals(-1, StringCalculatorKata.add("1,\n"));
+    }
 }
