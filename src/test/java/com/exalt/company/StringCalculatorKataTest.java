@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCalculatorKataTest {
 
+    //STEP ONE
     @Test
     void test_add_empty_string(){
         assertEquals(0, StringCalculatorKata.add(""));
@@ -24,7 +25,6 @@ public class StringCalculatorKataTest {
         assertEquals(3, StringCalculatorKata.add("1,2"));
     }
 
-    //TODO: impl solution to handle this test
     @Test
     void test_add_numbers_start_with_comma(){
         assertEquals(-1, StringCalculatorKata.add(",1,2"));
@@ -46,6 +46,7 @@ public class StringCalculatorKataTest {
         assertEquals(length, StringCalculatorKata.add(randoNumbers));
     }
 
+
     @Test
     void test_add_numbers_with_new_lines_between_numbers(){
         assertEquals(6, StringCalculatorKata.add("1\n2,3"));
@@ -54,5 +55,10 @@ public class StringCalculatorKataTest {
     @Test
     void test_add_handle_new_lines_between_numbers_is_not_ok(){
         assertEquals(-1, StringCalculatorKata.add("1,\n"));
+    }
+
+    @Test
+    void test_add_handle_new_lines_between_numbers_is_not_ok_reverse(){
+        assertEquals(-1, StringCalculatorKata.add("1\n,"));
     }
 }

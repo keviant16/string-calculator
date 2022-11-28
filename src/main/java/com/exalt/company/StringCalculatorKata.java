@@ -6,7 +6,7 @@ public class StringCalculatorKata {
     static int add(String numbers) {
 
         if(numbers.equals("")) return 0;
-        if(numbers.startsWith(",") || numbers.contains(",\n"))return -1;
+        if(numbers.startsWith(",") || numbers.contains(",\n") || numbers.contains("\n,"))return -1;
 
         //split numbers to array
         String[] arrOfNumbers = numbers.split(",|\\s");
