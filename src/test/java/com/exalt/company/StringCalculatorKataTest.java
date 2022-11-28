@@ -1,5 +1,6 @@
 package com.exalt.company;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.Collectors;
@@ -65,4 +66,12 @@ public class StringCalculatorKataTest {
         assertEquals(3, StringCalculatorKata.add("//;\n1;2"));
     }
 
+    @Test
+    void test_add_with_negative_numbers(){
+        ArithmeticException thrown = Assertions.assertThrows(ArithmeticException.class, () -> {
+            StringCalculatorKata.add("//:\n-1:2:9:6:-7");
+        });
+
+        Assertions.assertEquals("negatives not allowed: [-1, -7]", thrown.getMessage());
+    }
 }
