@@ -10,13 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StringCalculatorKataTest {
 
     @Test
-    void test_add_empty_string(){
-        assertEquals(0, StringCalculatorKata.add(""));
+    void test_add_number(){
+        assertEquals(1, StringCalculatorKata.add("1"));
     }
 
     @Test
-    void test_add_number(){
-        assertEquals(1, StringCalculatorKata.add("1"));
+    void test_add_with_empty_string(){
+        assertEquals(0, StringCalculatorKata.add(""));
     }
 
     @Test
@@ -45,7 +45,6 @@ public class StringCalculatorKataTest {
         assertEquals(length, StringCalculatorKata.add(randoNumbers));
     }
 
-
     @Test
     void test_add_numbers_with_new_lines_between_numbers(){
         assertEquals(6, StringCalculatorKata.add("1\n2,3"));
@@ -61,12 +60,9 @@ public class StringCalculatorKataTest {
         assertEquals(-1, StringCalculatorKata.add("1\n,"));
     }
 
-
     @Test
-    void test_add_white_different_delimiters(){
+    void test_add_with_different_delimiters(){
         assertEquals(3, StringCalculatorKata.add("//;\n1;2"));
     }
 
-
-    //;\n1;2”
 }
