@@ -27,7 +27,7 @@ public class StringCalculatorKataTest {
     //TODO: impl solution to handle this test
     @Test
     void test_add_numbers_start_with_comma(){
-        assertEquals(3, StringCalculatorKata.add(",1,2"));
+        assertEquals(-1, StringCalculatorKata.add(",1,2"));
     }
 
     @Test
