@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCalculatorKataTest {
 
-    //STEP ONE
     @Test
     void test_add_empty_string(){
         assertEquals(0, StringCalculatorKata.add(""));
@@ -61,4 +60,13 @@ public class StringCalculatorKataTest {
     void test_add_handle_new_lines_between_numbers_is_not_ok_reverse(){
         assertEquals(-1, StringCalculatorKata.add("1\n,"));
     }
+
+
+    @Test
+    void test_add_white_different_delimiters(){
+        assertEquals(3, StringCalculatorKata.add("//;\n1;2"));
+    }
+
+
+    //;\n1;2”
 }
